@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <title>A6.8</title>
+  </head>
+  <body>
+    <h1>Progressbar with 3 buttons</h1>
+    <div><br></div>
+    <div style="max-width: 70vw;"  >
+        <div class="progress">
+          <div id="progressBar" class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+    </div>
+    <div><br></div>
+    <button id="btn1" type="button" class="btn btn-dark">+1%</button>
+    <button id="btn2" type="button" class="btn btn-dark">+3%</button>
+    <button id="btn3" type="button" class="btn btn-dark">+10%</button>
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+<script>
+let bar = document.getElementById("progressBar");
+let startWidht=0;
+let plus1=1;
+let plus3=3;
+let plus10=10;
+function add1PercentBtn() {
+    startWidht += plus1;
+    bar.style.width=startWidht + "%";
+    $("#progressBar").attr("width", bar);
+    console.log(bar.style.width);
+}
+
+function add3PercentBtn() {
+    startWidht += plus3;
+    bar.style.width=startWidht + "%";
+    $("#progressBar").attr("width", bar);
+    console.log(bar.style.width);
+}
+
+function add10PercentBtn() {
+    startWidht += plus10;
+    bar.style.width=startWidht + "%";
+    $("#progressBar").attr("width", bar);
+    console.log(bar.style.width);
+}
+
+    $("#btn1").click(add1PercentBtn);
+    $("#btn2").click(add3PercentBtn);
+    $("#btn3").click(add10PercentBtn);
+    $(document).ready(init);
+  </script>
+  </body>
+</html>
